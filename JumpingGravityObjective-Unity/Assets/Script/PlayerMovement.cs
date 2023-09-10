@@ -26,9 +26,12 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
-        if (Input.GetButtonDown("Jump") && isJumping == false)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
+            if (isJumping == false)
+            {
+                rb.AddForce(new Vector2(rb.velocity.x, jump));
+            }
         }
     }
 
